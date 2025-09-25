@@ -15,11 +15,12 @@ bool hasCycle(Node* head) {
     Node* fast = head;
 
     while (fast && fast->next) {
-        slow = slow->next; 
+        slow = slow->next;           
         fast = fast->next->next;    
         if (slow == fast) return true; 
     }
     return false; 
+    }
 
 // Helper to create a singly linked list with n nodes. Returns head and optionally
 // a pointer to the node at index "linkIndex" (0-based) so we can form a cycle.
@@ -73,7 +74,7 @@ int main() {
         tail->next = linkNode; // create cycle
      } else {
         std::cout << "Test 2 - Unexpected: tail is null.\n";
-    }
+     }
 
     std::cout << (hasCycle(head2) ? "true" : "false") << "\n";
 
